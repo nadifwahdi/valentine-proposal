@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        .buttons {
+            position: relative;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        #no {
+            background-color: #ffffff;
+            color: #ff4d4d;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine? 💖</h1>
+    <div class="buttons">
+        <button id="yes" onclick="alert('Yeay I can\'t wait! 💖')">Yes</button>
+        <button id="no">No</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById("no");
+        
+        noButton.addEventListener("mouseover", () => {
+            const maxX = window.innerWidth - noButton.clientWidth - 20;
+            const maxY = window.innerHeight - noButton.clientHeight - 20;
+            
+            const newX = Math.floor(Math.random() * maxX);
+            const newY = Math.floor(Math.random() * maxY);
+            
+            noButton.style.left = `${newX}px`;
+            noButton.style.top = `${newY}px`;
+        });
+    </script>
+</body>
+</html>
